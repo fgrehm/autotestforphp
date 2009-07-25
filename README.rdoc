@@ -1,0 +1,136 @@
+= AutotestForPHP
+
+* http://github.com/fgrehm/autotestforphp
+* fgrehm@gmail.com
+
+== DESCRIPTION:
+
+AutotestForPHP is based off of ZenTest autotest which is a popular Ruby tool for running tests as soon as files get changed:
+* http://www.zenspider.com/ZSS/Products/ZenTest/
+
+Code for displaying notifications is based on Carlos Brando autotest-notification gem:
+* http://github.com/carlosbrando/autotest-notification
+
+The tool was written on Ruby but you don't need to be a Ruby programmer in order to use it, just make sure you have Ruby and RubyGems installed:
+* http://www.ruby-lang.org/
+* http://rubygems.org/read/chapter/3
+
+
+== SYNOPSYS
+
+  autotestforphp --install
+
+  autotestforphp
+
+
+== REQUIREMENTS:
+
+* PHP5
+* PHPUnit
+* Ruby
+* RubyGems
+
+* Linux: *(TESTED ON KDE ONLY)*
+    You need to have libnotify binaries installed.
+
+    For ubuntu this means: sudo apt-get install libnotify-bin
+
+    Other distributions may package it with other names, do a search for libnotify using your distribution package
+    manager.
+
+    If you use KDE and do not have libnotify-bin installed, it will try to use kdialog which is part of KDE.
+    It also works if you have zenity installed.
+
+* Mac: *(NOT TESTED)*
+    You need to have Growl and growlnotify installed on your machine.
+
+    Download Growl[http://growl.info/index.php] and install it like any other application on your Mac.
+
+    Then you must install the growlnotify.
+
+    In your shell, cd to the directory on the Growl disk image containing growlnotify, and type ./install.sh.
+    That script will install growlnotify to /usr/local/bin and the manpage to /usr/local/man.
+
+* Windows: *(NOT TESTED)*
+    You need to have Snarl and ruby-snarl installed on your machine.
+
+    Download Snarl[http://www.fullphat.net/] and install it like any other application on your machine.
+
+    Run in the command prompt:
+
+      $ gem install ruby-snarl
+
+
+== INSTALL:
+
+  gem install fgrehm-autotestforphp --source=http://gems.github.com
+
+
+== SETUP
+
+During instalation, AutotestForPHP will create:
+
+  1. An empty PHPUnit boostrap file on autotestforphp/bootstrap-autotest.php to be used when running tests
+
+  2. An empty config file on autotestforphp/config.autotest
+
+  3. A PHPUnit config file on autotestforphp/phpunit-autotest.xml to will configure the bootstrap file to be used,
+     tests folder and log results to a XML file needed for displaying notifications:
+
+        <phpunit bootstrap="./autotestforphp/bootstrap-autotest.php">
+            <testsuite name="Application">
+                <directory>./test/</directory>
+            </testsuite>
+            <logging>
+                <log type="test-xml" target="./autotestforphp/logfile.xml" />
+            </logging>
+        </phpunit>
+
+You can specify the folders or files to be watched on <em>autotestforphp/config.autotest</em> file by setting the FOLDERS_TO_WATCH Ruby constant:
+
+Example:
+
+  FOLDERS_TO_WATCH = ['./src/**/*', './app/**/*', './test/**/*', './some_specific_file.php']
+
+If no folders are specified in config file, AutotestForPHP will watch for changes on the following folders (if they exist):
+
+* src
+* app
+* lib
+* test
+
+
+== TODO:
+
+* Default <em>autotestforphp/bootstrap-autotest.php</em>
+* Write comments about config usage on <em>autotestforphp/config.autotest</em>
+* Some way to skip folders to be watched
+* Check if tool was already installed and skip file creation
+* Test on Mac and XP
+* Like ZenTest autotest, focus on running previous failures until they are fixed instead of running all tests all the time
+
+
+== LICENSE:
+
+(The MIT License)
+
+Copyright (c) 2009 Fábio Galvão Rehm
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+'Software'), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
