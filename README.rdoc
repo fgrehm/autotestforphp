@@ -51,7 +51,7 @@ The tool was written on Ruby but you don't need to be a Ruby programmer in order
     In your shell, cd to the directory on the Growl disk image containing growlnotify, and type ./install.sh.
     That script will install growlnotify to /usr/local/bin and the manpage to /usr/local/man.
 
-* Windows: *(NOT TESTED)*
+* Windows: *(TESTED ON VISTA ONLY)*
     You need to have Snarl and ruby-snarl installed on your machine.
 
     Download Snarl[http://www.fullphat.net/] and install it like any other application on your machine.
