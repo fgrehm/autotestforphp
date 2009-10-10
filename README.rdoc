@@ -15,13 +15,11 @@ The tool was written on Ruby but you don't need to be a Ruby programmer in order
 * http://www.ruby-lang.org/
 * http://rubygems.org/read/chapter/3
 
-
 == SYNOPSYS
 
   autotestforphp --install
 
   autotestforphp
-
 
 == REQUIREMENTS:
 
