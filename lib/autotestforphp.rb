@@ -70,7 +70,7 @@ class Autotestforphp
 
   def make_test_cmd
     case RUBY_PLATFORM
-    when /linux/
+    when /linux/,/darwin/
       cmd = "phpunit"
     when /mswin/
       cmd = "phpunit.bat"
@@ -89,7 +89,8 @@ class Autotestforphp
         <directory>./test/</directory>
     </testsuite>
     <logging>
-        <log type="test-xml" target="./autotestforphp/logfile.xml" />
+        <log type="junit" target="./autotestforphp/logfile.xml">
+        <!-- log type="test-xml" target="./autotestforphp/logfile.xml" for PHPUnit <= 3.2 --/>
     </logging>
 </phpunit>
 CONFIG
@@ -166,7 +167,7 @@ private
   end  
   def clear_screen
     case RUBY_PLATFORM
-    when /linux/
+    when /linux/,/darwin/
       system("clear")
     when /mswin/
       system("cls")
