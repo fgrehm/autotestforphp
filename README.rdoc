@@ -2,6 +2,7 @@
 
 * http://github.com/fgrehm/autotestforphp
 * fgrehm@gmail.com
+* Note: This fork is mostly adapting the code for OSX Leopard and contributing with some testing 
 
 == DESCRIPTION:
 
@@ -30,7 +31,7 @@ The tool was written on Ruby but you don't need to be a Ruby programmer in order
 * Ruby
 * RubyGems
 
-* Linux: *(TESTED ON KDE ONLY)*
+* Linux: *(ORIGINALY TESTED ON KDE ONLY)*
     You need to have libnotify binaries installed.
 
     For ubuntu this means: sudo apt-get install libnotify-bin
@@ -41,7 +42,7 @@ The tool was written on Ruby but you don't need to be a Ruby programmer in order
     If you use KDE and do not have libnotify-bin installed, it will try to use kdialog which is part of KDE.
     It also works if you have zenity installed.
 
-* Mac: *(NOT TESTED)*
+* Mac: 
     You need to have Growl and growlnotify installed on your machine.
 
     Download Growl[http://growl.info/index.php] and install it like any other application on your Mac.

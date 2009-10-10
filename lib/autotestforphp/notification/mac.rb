@@ -8,7 +8,8 @@ class Autotestforphp
       class << self
 
         def notify(title, msg, img)
-          system "growlnotify -n autotest --image #{img} -m '#{msg}' -t #{title}"
+          system "growlnotify -n autotest --image #{img} -m '#{msg}' -t #{title} -w" 
+	  #note: -w stops execution until growl notification desapears
         end
       end
     end
