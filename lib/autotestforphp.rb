@@ -89,8 +89,8 @@ class Autotestforphp
         <directory>./test/</directory>
     </testsuite>
     <logging>
-        <log type="junit" target="./autotestforphp/logfile.xml">
-        <!-- log type="test-xml" target="./autotestforphp/logfile.xml" for PHPUnit <= 3.2 --/>
+        <log type="junit" target="./autotestforphp/logfile.xml" />
+        <!-- log type="test-xml" target="./autotestforphp/logfile.xml" for PHPUnit <= 3.2 /-->
     </logging>
 </phpunit>
 CONFIG

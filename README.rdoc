@@ -2,7 +2,7 @@
 
 * http://github.com/fgrehm/autotestforphp
 * fgrehm@gmail.com
-* Note: This fork is mostly adapting the code for OSX Leopard and contributing with some testing 
+
 
 == DESCRIPTION:
 
@@ -16,11 +16,6 @@ The tool was written on Ruby but you don't need to be a Ruby programmer in order
 * http://www.ruby-lang.org/
 * http://rubygems.org/read/chapter/3
 
-== SYNOPSYS
-
-  autotestforphp --install
-
-  autotestforphp
 
 == REQUIREMENTS:
 
@@ -29,7 +24,7 @@ The tool was written on Ruby but you don't need to be a Ruby programmer in order
 * Ruby
 * RubyGems
 
-* Linux: *(ORIGINALY TESTED ON KDE ONLY)*
+* Linux:
     You need to have libnotify binaries installed.
 
     For ubuntu this means: sudo apt-get install libnotify-bin
@@ -50,14 +45,14 @@ The tool was written on Ruby but you don't need to be a Ruby programmer in order
     In your shell, cd to the directory on the Growl disk image containing growlnotify, and type ./install.sh.
     That script will install growlnotify to /usr/local/bin and the manpage to /usr/local/man.
 
-* Windows: *(TESTED ON VISTA ONLY)*
+* Windows:
     You need to have Snarl and ruby-snarl installed on your machine.
 
     Download Snarl[http://www.fullphat.net/] and install it like any other application on your machine.
 
     Run in the command prompt:
 
-      $ gem install ruby-snarl
+      gem install ruby-snarl
 
 
 == INSTALL:
@@ -65,7 +60,11 @@ The tool was written on Ruby but you don't need to be a Ruby programmer in order
   gem install fgrehm-autotestforphp --source=http://gems.github.com
 
 
-== SETUP
+== USAGE
+
+  autotestforphp --install
+
+  autotestforphp
 
 During instalation, AutotestForPHP will create:
 
@@ -81,11 +80,12 @@ During instalation, AutotestForPHP will create:
                 <directory>./test/</directory>
             </testsuite>
             <logging>
-                <log type="test-xml" target="./autotestforphp/logfile.xml" />
+                <log type="junit" target="./autotestforphp/logfile.xml" />
+                <!-- log type="test-xml" target="./autotestforphp/logfile.xml" for PHPUnit <= 3.2 /-->
             </logging>
         </phpunit>
 
-You can specify the folders or files to be watched on <em>autotestforphp/config.autotest</em> file by setting the FOLDERS_TO_WATCH Ruby constant:
+You can specify the folders or files to be watched on <em>autotestforphp/config.autotest</em> file by setting the FOLDERS_TO_WATCH Ruby constant
 
 Example:
 
@@ -99,21 +99,25 @@ If no folders are specified in config file, AutotestForPHP will watch for change
 * test
 
 
+== CONTRIBUTORS:
+
+* Fabio Rehm [http://github.com/fgrehm]
+* Andrea Fiore [http://github.com/web-bug]
+
+
 == TODO:
 
 * Default <em>autotestforphp/bootstrap-autotest.php</em>
 * Write comments about config usage on <em>autotestforphp/config.autotest</em>
-* Some way to skip folders to be watched
+* Folders / files to skip
 * Check if tool was already installed and skip file creation
-* Test on Mac and XP
-* Like ZenTest autotest, focus on running previous failures until they are fixed instead of running all tests all the time
 
 
 == LICENSE:
 
 (The MIT License)
 
-Copyright (c) 2009 Fábio Galvão Rehm
+Copyright (c) 2009
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
