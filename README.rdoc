@@ -13,7 +13,7 @@ Code for displaying notifications is based on Carlos Brando autotest-notificatio
 * http://github.com/carlosbrando/autotest-notification
 
 The tool was written on Ruby but you don't need to be a Ruby programmer in order to use it, just make sure you have Ruby and RubyGems installed:
-* http://www.ruby-lang.org/
+* http://www.ruby-lang.org
 * http://rubygems.org/read/chapter/3
 
 
@@ -57,7 +57,7 @@ The tool was written on Ruby but you don't need to be a Ruby programmer in order
 
 == INSTALL:
 
-  gem install fgrehm-autotestforphp --source=http://gems.github.com
+  gem install autotestforphp --source http://gemcutter.org
 
 
 == USAGE

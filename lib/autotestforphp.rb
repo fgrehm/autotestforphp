@@ -7,7 +7,7 @@ require 'autotestforphp/notification'
 require 'autotestforphp/result'
 
 class Autotestforphp
-  VERSION = '0.0.1'
+  VERSION = '0.0.3'
 
   class << self
     def install
