@@ -111,6 +111,7 @@ If no folders are specified in config file, AutotestForPHP will watch for change
 * Write comments about config usage on <em>autotestforphp/config.autotest</em>
 * Folders / files to skip
 * Check if tool was already installed and skip file creation
+* Support for SimpleTest
 
 
 == LICENSE:
